@@ -25,6 +25,10 @@ async function bootstrap(): Promise<void> {
     app.use('/api', createFaucetRouter(tempoService, redisService));
 
     app.get('/', (req, res) => {
+      const host = req.get('host');
+      const protocol = req.protocol;
+      const baseUrl = `${protocol}://${host}`;
+
       const html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +70,7 @@ async function bootstrap(): Promise<void> {
 
     <h2>Usage</h2>
     <p>Request tokens from the faucet:</p>
-    <pre><code>curl -X POST http://localhost:${config.port}/api/fund \\
+    <pre><code>curl -X POST ${baseUrl}/api/fund \\
   -H "Content-Type: application/json" \\
   -d '{
     "address": "0xYourWalletAddress",
