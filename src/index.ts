@@ -86,6 +86,9 @@ async function bootstrap(): Promise<void> {
         <li>ThetaUSD</li>
     </ul>
 
+    <h2>Allowed Amounts</h2>
+    <p>You can request one of the following amounts: <strong>1000</strong>, <strong>5000</strong>, or <strong>10000</strong> tokens per request.</p>
+
     <h2>Endpoints</h2>
     <ul>
         <li><code>GET /api/health</code> - Health check</li>
