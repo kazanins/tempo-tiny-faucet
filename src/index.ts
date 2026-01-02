@@ -61,7 +61,7 @@ async function bootstrap(): Promise<void> {
 </head>
 <body>
     <h1>Tempo Tiny Faucet</h1>
-    <p>A faucet service for Tempo testnet tokens</p>
+    <p>An unofficial faucet service for Tempo testnet tokens. Find the official faucet <a href="https://docs.tempo.xyz/quickstart/faucet" target="_blank">here</a>.</p>
 
     <div class="info">
         <strong>Service Address:</strong> ${tempoService.getWalletAddress()}<br>
