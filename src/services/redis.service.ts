@@ -6,15 +6,23 @@ export class RedisService {
   private client: Redis;
 
   constructor() {
-    this.client = new Redis({
-      host: config.redis.host,
-      port: config.redis.port,
-      password: config.redis.password,
-      retryStrategy: (times) => {
-        const delay = Math.min(times * 50, 2000);
-        return delay;
-      },
-    });
+    // If REDIS_URL is provided (Railway), use it; otherwise use individual config
+    this.client = config.redis.url
+      ? new Redis(config.redis.url, {
+          retryStrategy: (times) => {
+            const delay = Math.min(times * 50, 2000);
+            return delay;
+          },
+        })
+      : new Redis({
+          host: config.redis.host,
+          port: config.redis.port,
+          password: config.redis.password,
+          retryStrategy: (times) => {
+            const delay = Math.min(times * 50, 2000);
+            return delay;
+          },
+        });
 
     this.client.on('connect', () => {
       logger.info('Redis connected');

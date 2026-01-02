@@ -20,6 +20,7 @@ export const config = {
   tempoRpcUrl: process.env.TEMPO_RPC_URL || 'https://rpc.testnet.tempo.xyz',
   serviceWalletPrivateKey: process.env.SERVICE_WALLET_PRIVATE_KEY || '',
   redis: {
+    url: process.env.REDIS_URL || undefined,
     host: process.env.REDIS_HOST || 'localhost',
     port: parseInt(process.env.REDIS_PORT || '6379', 10),
     password: process.env.REDIS_PASSWORD || undefined,
