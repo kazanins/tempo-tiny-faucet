@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: tempo-tiny-faucet
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: TEMPO_RPC_URL
+        value: https://rpc.testnet.tempo.xyz
+      - key: SERVICE_WALLET_PRIVATE_KEY
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: tempo-faucet-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: tempo-faucet-redis
+          property: port
+      - key: REDIS_PASSWORD
+        fromService:
+          type: redis
+          name: tempo-faucet-redis
+          property: password
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 86400000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 3
+
+  - type: redis
+    name: tempo-faucet-redis
+    plan: starter
+    maxmemoryPolicy: allkeys-lru

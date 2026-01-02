@@ -1,0 +1,12 @@
+node_modules/
+.env
+.DS_Store
+*.log
+coverage/
+.vscode/
+.idea/
+examples/
+*.md
+!README.md
+.git/
+dist/
