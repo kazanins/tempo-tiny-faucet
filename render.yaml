@@ -11,7 +11,7 @@ services:
       - key: PORT
         value: 3000
       - key: TEMPO_RPC_URL
-        value: https://rpc.testnet.tempo.xyz
+        value: https://rpc.moderato.tempo.xyz
       - key: SERVICE_WALLET_PRIVATE_KEY
         sync: false
       - key: REDIS_HOST

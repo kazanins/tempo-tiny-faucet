@@ -79,7 +79,7 @@ Edit `.env` and add your private key:
 ```env
 PORT=3000
 NODE_ENV=development
-TEMPO_RPC_URL=https://rpc.testnet.tempo.xyz
+TEMPO_RPC_URL=https://rpc.moderato.tempo.xyz
 SERVICE_WALLET_PRIVATE_KEY=0xYourPrivateKeyHere
 REDIS_HOST=localhost
 REDIS_PORT=6379

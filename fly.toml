@@ -7,7 +7,7 @@ primary_region = "iad"
 [env]
   NODE_ENV = "production"
   PORT = "3000"
-  TEMPO_RPC_URL = "https://rpc.testnet.tempo.xyz"
+  TEMPO_RPC_URL = "https://rpc.moderato.tempo.xyz"
   RATE_LIMIT_WINDOW_MS = "86400000"
   RATE_LIMIT_MAX_REQUESTS = "3"
 

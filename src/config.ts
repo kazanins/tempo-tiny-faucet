@@ -17,7 +17,7 @@ export type AllowedAmount = typeof ALLOWED_AMOUNTS[number];
 export const config = {
   port: parseInt(process.env.PORT || '3000', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
-  tempoRpcUrl: process.env.TEMPO_RPC_URL || 'https://rpc.testnet.tempo.xyz',
+  tempoRpcUrl: process.env.TEMPO_RPC_URL || 'https://rpc.moderato.tempo.xyz',
   serviceWalletPrivateKey: process.env.SERVICE_WALLET_PRIVATE_KEY || '',
   redis: {
     url: process.env.REDIS_URL || undefined,

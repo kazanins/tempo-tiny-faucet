@@ -171,7 +171,7 @@ export function FaucetWidget({ userAddress }: { userAddress: string }) {
           <strong>Success!</strong>
           <br />
           <a
-            href={`https://explorer.testnet.tempo.xyz/tx/${state.txHash}`}
+            href={`https://explore.tempo.xyz/tx/${state.txHash}`}
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: '#155724', wordBreak: 'break-all' }}

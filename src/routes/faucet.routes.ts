@@ -127,7 +127,7 @@ export function createFaucetRouter(
           tokenAddress: TEMPO_TOKENS[token],
           amount,
           txHash,
-          explorerUrl: `https://explorer.testnet.tempo.xyz/tx/${txHash}`,
+          explorerUrl: `https://explore.tempo.xyz/tx/${txHash}`,
         },
         rateLimit: {
           remaining: rateLimit.remaining,

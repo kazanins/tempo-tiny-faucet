@@ -57,7 +57,7 @@ cast wallet new
 ```env
 PORT=3000
 NODE_ENV=development
-TEMPO_RPC_URL=https://rpc.testnet.tempo.xyz
+TEMPO_RPC_URL=https://rpc.moderato.tempo.xyz
 SERVICE_WALLET_PRIVATE_KEY=your_private_key_here
 REDIS_HOST=localhost
 REDIS_PORT=6379
@@ -126,7 +126,7 @@ Content-Type: application/json
     "tokenAddress": "0x20c0000000000000000000000000000000000000",
     "amount": 5000,
     "txHash": "0x...",
-    "explorerUrl": "https://explorer.testnet.tempo.xyz/tx/0x..."
+    "explorerUrl": "https://explore.tempo.xyz/tx/0x..."
   },
   "rateLimit": {
     "remaining": 2,
