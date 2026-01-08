@@ -26,7 +26,7 @@ async function bootstrap(): Promise<void> {
 
     app.get('/', (req, res) => {
       const host = req.get('host');
-      const protocol = req.protocol;
+      const protocol = req.get('x-forwarded-proto') || req.protocol;
       const baseUrl = `${protocol}://${host}`;
 
       const html = `
