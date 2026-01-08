@@ -13,9 +13,17 @@ export class TempoService {
   private wallet: Wallet;
 
   constructor() {
+    logger.info('Initializing TempoService', { rpcUrl: config.tempoRpcUrl });
     this.provider = new JsonRpcProvider(config.tempoRpcUrl);
     this.wallet = new Wallet(config.serviceWalletPrivateKey, this.provider);
     logger.info('TempoService initialized', { address: this.wallet.address });
+
+    // Log chain ID on initialization
+    this.getChainId().then(chainId => {
+      logger.info('Connected to chain', { chainId: chainId.toString() });
+    }).catch(err => {
+      logger.error('Failed to get chain ID', { error: err });
+    });
   }
 
   async fundServiceWallet(): Promise<string[]> {

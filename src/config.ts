@@ -39,4 +39,7 @@ export function validateConfig(): void {
   if (!config.tempoRpcUrl) {
     throw new Error('TEMPO_RPC_URL is required');
   }
+
+  // Log RPC URL for debugging
+  console.log('[Config] Using Tempo RPC URL:', config.tempoRpcUrl);
 }
